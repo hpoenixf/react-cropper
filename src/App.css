@@ -1,0 +1,65 @@
+img.img {
+  width: 200px;
+  height: 200px
+}
+.image-principal {
+  position: relative;
+}
+.select-area {
+  box-sizing: border-box;
+  border: 2px solid green;
+  position: absolute;
+  background: #fff;
+  opacity: 0.5;
+  cursor: move;
+}
+.top-resize {
+  position: absolute;
+  cursor: n-resize;
+  height: 7px;
+  width: 100%;
+  top: -5px;
+  left: 0;
+}
+.bottom-resize {
+  position: absolute;
+  cursor: s-resize;
+  height: 7px;
+  width: 100%;
+  bottom: -5px;
+  left: 0;
+}
+.left-resize {
+  position: absolute;
+  cursor: w-resize;
+  width: 7px;
+  height: 100%;
+  left: -5px;
+  top: 0;
+}
+.right-resize {
+  position: absolute;
+  cursor: e-resize;
+  width: 7px;
+  height: 100%;
+  right: -5px;
+  top: 0;
+}
+.left-top-resize {
+  z-index: 90;
+  position: absolute;
+  cursor: nw-resize;
+  width: 20px;
+  height: 20px;
+  left: 1px;
+  top: 1px;
+}
+.right-bottom-resize {
+  z-index: 90;
+  position: absolute;
+  cursor: se-resize;
+  width: 20px;
+  height: 20px;
+  bottom: -1px;
+  right: -1px;
+}
