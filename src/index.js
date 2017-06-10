@@ -122,8 +122,8 @@ class SelectArea extends Component {
     let selectArea = {
       posLeft: e.clientX,
       posTop: e.clientY,
-      left: e.clientX - el.offsetLeft - container.offsetLeft,
-      top: e.clientY - el.offsetTop - container.offsetTop,
+      left: e.clientX - el.offsetLeft,
+      top: e.clientY - el.offsetTop,
       maxMoveX: container.offsetWidth - el.offsetWidth,
       maxMoveY: container.offsetHeight - el.offsetHeight,
     }
@@ -135,10 +135,9 @@ class SelectArea extends Component {
     if (!this.state || !this.state.el || !this.state.selectArea) {
       return
     }
-    let container = this.state.container
     let selectArea = this.state.selectArea
-    let newPosLeft = e.clientX - container.offsetLeft - selectArea.left
-    let newPosTop = e.clientY - container.offsetTop - selectArea.top
+    let newPosLeft = e.clientX- selectArea.left
+    let newPosTop = e.clientY - selectArea.top
     // 控制移动范围
     if (newPosLeft <= 0) {
       newPosLeft = 0
@@ -152,7 +151,7 @@ class SelectArea extends Component {
     }
     let elStyle = this.state.el.style
     elStyle.left = newPosLeft + 'px'
-    elStyle.style.top = newPosTop + 'px'
+    elStyle.top = newPosTop + 'px'
   }
   resize(type, e) {
     if (!this.state || !this.state.el || !this.state.resizeArea) {
@@ -246,7 +245,6 @@ class SelectArea extends Component {
   }
   resizeStart = (e, type) => {
     e.stopPropagation()
-    e.preventDefault()
     const el = e.target.parentElement
     let resizeArea = {
       posLeft: e.clientX,
