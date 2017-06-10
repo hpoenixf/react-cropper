@@ -74,12 +74,15 @@ class Cropper extends Component {
   getCropData = e => {
     e.preventDefault()
     let SelectArea = ReactDOM.findDOMNode(this.refs.selectArea).style
+
     let a = {
       width: parseInt(SelectArea.width, 10),
       height: parseInt(SelectArea.height, 10),
       left: parseInt(SelectArea.left, 10),
       top: parseInt(SelectArea.top, 10)
     }
+    a.radio = this.state.naturalSize.width / a.width
+
     console.log(a)
     return a
   }
